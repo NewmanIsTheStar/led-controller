@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="0; url=/index.shtml">
+    <meta charset="UTF-8">
+    <title>Text was entered</title>
+</head>
+<body>
+    <h1>Command Processed Successfully</h1>
+        
+    <p><a href="/index.shtml">Return to hello world form</a></p>
+</body>
+</html>
