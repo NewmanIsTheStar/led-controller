@@ -35,7 +35,7 @@ sudo apt install git build-essential cmake gcc-arm-none-eabi libnewlib-arm-none-
 ## Clone and build the code
 ```
 git clone --recurse-submodules https://github.com/NewmanIsTheStar/pluto_hello_world.git 
-cd usurper
+cd pluto_hello_world
 mkdir build
 cd build
 cmake ..
