@@ -20,7 +20,7 @@ A working C application for the Pi Pico2 W that includes all the core functional
     - Syslog
     - MQTT
     - GPIO
-    - Support for OTA software upgrades  
+  - Support for OTA software upgrades  
 - Shell over HTTP provides a command line interface
   - supports simplified verions of many commands familar to Linux users e.g. ls, cp, rm, df, stat, wget
 - A framework for adding application configuration
