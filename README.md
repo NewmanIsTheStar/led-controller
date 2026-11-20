@@ -8,21 +8,21 @@ A working C application for the Pi Pico2 W that includes all the core functional
 - LwIP IP protocol stack
 - FreeRTOS premptive task scheduler
 - picoFS file system
--- written specifically for Pi Pico2
--- files are stored in contiguous blocks
--- multiple executables may be stored in the file system at once
---- memory translation is used to allow unmodified executables to run from the file system
---- this is similar to using paritions but much more flexible 
+  - written specifically for Pi Pico2
+  - files are stored in contiguous blocks
+  - multiple executables may be stored in the file system at once
+    - memory translation is used to allow unmodified executables to run from the file system
+    - this is similar to using paritions but much more flexible 
 - Web Server
--- Support for configuration of standard features
---- WiFi
---- Time server
---- Syslog
---- MQTT
---- GPIO
--- Support for OTA software upgrades  
+  - Support for configuration of standard features
+    - WiFi
+    - Time server
+    - Syslog
+    - MQTT
+    - GPIO
+    - Support for OTA software upgrades  
 - Shell over HTTP provides a command line interface
--- supports simplified verions of many commands familar to Linux users e.g. ls, cp, rm, df, stat, wget
+  - supports simplified verions of many commands familar to Linux users e.g. ls, cp, rm, df, stat, wget
 - A framework for adding application configuration
 - A framework for adding application tasks
 - Watchdog, Stack and Heap monitoring
