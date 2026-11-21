@@ -9,7 +9,10 @@
 
 typedef struct APP_WEB_VARIABLES
 {
-  char hello_world_web_variable[128];   // example web variable          
+  char hello_world_web_variable[128];   // example web variable   
+  int led_current_pattern;
+  int led_current_transition_delay;
+  char led_last_request_ip[32];       
 } APP_WEB_VARIABLES_T;                  //remember to add initialization code when adding to this structure !!!
 
 typedef struct 

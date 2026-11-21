@@ -32,6 +32,17 @@ typedef struct
 {   
     int version;        
     char hello_world_config_variable[64];   // example configtuion variable
+    int led_pattern;
+    int led_speed;
+    int led_number;
+    int led_pin;
+    int led_rgbw;
+    int use_led_strip_to_indicate_irrigation_status;
+    int led_pattern_when_irrigation_active;
+    int led_pattern_when_irrigation_terminated;
+    int led_sustain_duration; 
+    int led_strip_remote_enable;  
+    char led_strip_remote_ip[6][32];    
     uint16_t crc;
         
 } APP_CONFIG_T;

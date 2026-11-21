@@ -59,7 +59,7 @@ unset(picotool_DIR CACHE)
 # Initialize sdk for entire project
 set(SKIP_PICO_MALLOC 1)
 include("${PICO_SDK_PATH}/pico_sdk_init.cmake")
-project(pluto_hello_world C CXX ASM)                  # <=== name must be explicitly set here
+project(led-controller C CXX ASM)                  # <=== name must be explicitly set here
 pico_sdk_init()
 
 # Create "generated" directory
