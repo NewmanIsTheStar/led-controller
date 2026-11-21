@@ -27,5 +27,8 @@ int application_web_init(void)
     app_web.hello_world_web_variable[0] = 0;
     sprintf(app_web.hello_world_web_variable, "Nothing entered yet");
 
+    app_web.led_last_request_ip[0] = 0;
+    sprintf(app_web.led_last_request_ip, "Nothing received yet");
+
     return(0);
 }

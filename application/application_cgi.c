@@ -17,6 +17,7 @@
 #include "system_web.h"
 #include "application_web.h"
 #include "shell.h"
+#include "config.h"
 
 
 
@@ -92,11 +93,85 @@ const char * cgi_hello_wworld_handler(int iIndex, int iNumParams, char *pcParam[
     return "/hello_world_edit.shtml";
 }
 
+/*!
+ * \brief cgi handler
+ *
+ * \param[in]  iIndex       index of cgi handler in cgi_handlers table
+ * \param[in]  iNumParams   number of parameters
+ * \param[in]  pcParam      parameter name
+ * \param[in]  pcValue      parameter value 
+ * 
+ * \return nothing
+ */
+const char * cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[], WEB_SESSION_STATE_T *connection_state)
+{
+    int i = 0;
+    char *param = NULL;
+    char *value = NULL;
 
+    cfg->use_led_strip_to_indicate_irrigation_status = 0;   
+    cfg->led_rgbw = 0;   
+
+    //dump_parameters(iIndex, iNumParams, pcParam, pcValue);
+
+    i = 0;
+    while (i < iNumParams)
+    {
+        param = pcParam[i];
+        value = pcValue[i];
+
+        if (param && value)
+        {
+            //printf("Parameter: %s has Value: %s\n", param, value);
+
+            if (strcasecmp("lpin", param) == 0)
+            {
+                sscanf(value, "%d", &cfg->led_pin);             
+            }
+
+            if (strcasecmp("lrgbw", param) == 0)
+            {
+                if (value[0])
+                {
+                    cfg->led_rgbw = 1;
+                } 
+                else
+                {
+                    cfg->led_rgbw = 0;
+                }                             
+            }            
+
+            if (strcasecmp("lnum", param) == 0)
+            {
+                sscanf(value, "%d", &cfg->led_number);             
+            }  
+
+            if (strcasecmp("lie", param) == 0)
+            {
+                if (value[0])
+                {
+                    cfg->use_led_strip_to_indicate_irrigation_status = 1;
+                } 
+                else
+                {
+                    cfg->use_led_strip_to_indicate_irrigation_status = 0;
+                }                             
+            }                
+        }
+
+        i++;
+    }
+
+
+    // Send the next page back to the user
+    config_changed();
+    return "/index.shtml";
+}
 
 static const MY_CGI_T application_cgi_handlers[] = 
 {
-    {"/cgi_hello_world.shtml",         cgi_hello_wworld_handler},  
+    {"/cgi_hello_world.shtml",         cgi_hello_wworld_handler}, 
+    {"/cgi_led_config.shtml",                   cgi_led_handler}
         
 };
 

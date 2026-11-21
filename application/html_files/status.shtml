@@ -75,7 +75,26 @@ body {
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td> 
-    </tr>          
+    </tr>
+    
+    <tr>
+      <td>Current LED pattern</td>
+      <td><!--#clpat--></td>
+    </tr>    
+    <tr>
+      <td>Current LED transition delay</td> 
+      <td><!--#cltran--></td> 
+    </tr>
+    <tr>
+      <td>Last LED request from</td> 
+      <td><!--#clreq--></td>       
+    </tr>    
+    <br>
+    <br>
+    <tr>     
+      <td>Local Time</td>
+      <td><!--#ltme--></td>       
+    </tr>    
     <tr>
       <td>Network Time</td>
       <td><!--#time--></td>

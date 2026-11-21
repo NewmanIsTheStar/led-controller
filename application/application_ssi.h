@@ -10,8 +10,14 @@
 */
 #define APPLICATION_SSI_TAGS \
     x(hello)   \
-    x(world)
-  
+    x(world)   \
+    x(lpin)    \
+    x(lrgbw)   \
+    x(lnum)    \
+    x(clpat)   \
+    x(cltran)  \
+    x(clreq)
+      
     u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *connection_state);
 
     #endif

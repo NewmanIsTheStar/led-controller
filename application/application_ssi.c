@@ -47,14 +47,49 @@ u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *
             printed = snprintf(pcInsert, iInsertLen, "%s", cfg->hello_world_config_variable);    
         }
         break;       
-                                 
+
+        case SSI_lpin: //lpin
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%d", cfg->led_pin);
+        }               
+        break;
+
+        case SSI_lrgbw: //lrgbw
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%d", cfg->led_rgbw);
+        }               
+        break;
+
+        case SSI_lnum: //lnum
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%d", cfg->led_number);
+        }               
+        break;  
+
+        case SSI_clpat: //clpat
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%d", app_web.led_current_pattern);
+        } 
+        break;
+
+        case SSI_cltran: //cltran
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%d", app_web.led_current_transition_delay);
+        } 
+        break; 
+
+        case SSI_clreq: //clreq
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%s", app_web.led_last_request_ip);
+        } 
+        break;         
 
          // *** application  SSI end ***
         /************************************************************************************************/
 
         default:
         {
-            printed = snprintf(pcInsert, iInsertLen, "Unhandled SSI tag");    
+            printed = snprintf(pcInsert, iInsertLen, "Unhandled SSI tag [%d]", iIndex);    
         }
         break;                 
     }

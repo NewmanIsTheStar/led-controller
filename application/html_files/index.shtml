@@ -11,10 +11,10 @@
 <script>
     function load_page() {
         if(screen.availHeight > screen.availWidth){
-            window.location = "/hw_portrait.shtml"; 
+            window.location = "/lc_portrait.shtml"; 
         }
         else {
-            window.location = "/hw_landscape.shtml";
+            window.location = "/lc_landscape.shtml";
         }
     }
 </script>
