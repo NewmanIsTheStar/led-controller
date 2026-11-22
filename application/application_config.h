@@ -8,6 +8,7 @@
 
 #include <limits.h>
 
+#define APP_CONFIG_FILE_NAME "led-control.cfg"
 
 typedef enum
 {
