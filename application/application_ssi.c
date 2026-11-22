@@ -23,7 +23,7 @@
 extern uint32_t unix_time;
 extern APP_WEB_VARIABLES_T app_web;
 extern SYS_WEB_VARIABLES_T sys_web;
-extern APP_CONFIG_T config;
+// extern APP_CONFIG_T config;
 
 
 
@@ -42,11 +42,11 @@ u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *
         }
         break; 
 
-        case SSI_world:  // hello world example SSI
-        {
-            printed = snprintf(pcInsert, iInsertLen, "%s", cfg->hello_world_config_variable);    
-        }
-        break;       
+        // case SSI_world:  // hello world example SSI
+        // {
+        //     printed = snprintf(pcInsert, iInsertLen, "%s", cfg->hello_world_config_variable);    
+        // }
+        // break;       
 
         case SSI_lpin: //lpin
         {

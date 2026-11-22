@@ -31,7 +31,6 @@ typedef enum
 typedef struct
 {   
     int version;        
-    char hello_world_config_variable[64];   // example configtuion variable
     int led_pattern;
     int led_speed;
     int led_number;

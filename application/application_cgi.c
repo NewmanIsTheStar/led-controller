@@ -29,69 +29,6 @@ extern WORKER_TASK_T worker_tasks[];
 extern char current_calendar_web_page[50];
 
 
-/*!
- * \brief cgi handler   
- *
- * \param[in]  iIndex       index of cgi handler in cgi_handlers table
- * \param[in]  iNumParams   number of parameters
- * \param[in]  pcParam      parameter name
- * \param[in]  pcValue      parameter value 
- * 
- * \return nothing
- */
-const char * cgi_hello_wworld_handler(int iIndex, int iNumParams, char *pcParam[], char *pcValue[], WEB_SESSION_STATE_T *connection_state)
-{
-    int i = 0;
-    //int whole_part = 0;
-    //int tenths_part = 0;
-    char *param = NULL;
-    char *value = NULL;
-    //int new_value = 0;
-
-       
-    //dump_parameters(iIndex, iNumParams, pcParam, pcValue);
-
-    i = 0;
-    while (i < iNumParams)
-    {
-        param = pcParam[i];
-        value = pcValue[i];
-
-        if (param && value)
-        {
-            //printf("Parameter: %s has Value: %s\n", param, value);
-            if (strcasecmp("world", param) == 0)
-            {
-                // Example 1: in this exmple we store the value of parameter x in the application configuration
-                sscanf(value, "%s", cfg->hello_world_config_variable); 
-                urldecode(cfg->hello_world_config_variable, cfg->hello_world_config_variable);
-                if (strcasecmp(cfg->hello_world_config_variable, "Hello World") == 0)
-                {
-                    snprintf(app_web.hello_world_web_variable, sizeof(app_web.hello_world_web_variable), "User entered the correct response: %s\n", cfg->hello_world_config_variable);
-                    printf("User entered the correct response: %s\n", cfg->hello_world_config_variable);
-                    shell_printf("User entered the correct response: %s\n", cfg->hello_world_config_variable);
-                    
-                }
-                else
-                {
-                    snprintf(app_web.hello_world_web_variable, sizeof(app_web.hello_world_web_variable), "User entered an incorrect response: %s\n", cfg->hello_world_config_variable);                   
-                    printf("User entered an incorrect response: %s\n", cfg->hello_world_config_variable);
-                    shell_printf("User entered an incorrect response: %s\n", cfg->hello_world_config_variable);
-                }
-
-                // Example 2: in this exmple we store the value of parameter x in the connection_state structure
-                // this structure is passed to subsequent SSI / CGI function calls for this web page
-                // thus enabling behavior to be altered based on prior user actions  
-                sscanf(value, "%d", &(connection_state->hello_world_state_variable));                                 
-            }                 
-        }
-
-        i++;
-    }
-
-    // Send the next page back to the user
-    return "/hello_world_edit.shtml";
-}
 
 /*!
  * \brief cgi handler
@@ -170,7 +107,6 @@ const char * cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *
 
 static const MY_CGI_T application_cgi_handlers[] = 
 {
-    {"/cgi_hello_world.shtml",         cgi_hello_wworld_handler}, 
     {"/cgi_led_config.shtml",                   cgi_led_handler}
         
 };

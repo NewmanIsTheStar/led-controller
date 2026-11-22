@@ -7,8 +7,6 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "worker_tasks.h"
-
-#include "hello_world_task.h"
 #include "led_strip.h"
 #include "message.h"
 #include "mqtt.h"
@@ -16,8 +14,7 @@
 // worker tasks to launch and monitor
 WORKER_TASK_T worker_tasks[] =
 {
-  //  function            name                    stack   priority            
-    {   hello_world_task, "Hello World Task",     8096,   1},          
+  //  function            name                    stack   priority                   
     {   led_strip_task,   "LED Strip Task",       1024,   1},  
     {   message_task,     "Message Task",         1024,   1},  
     {   mqtt_task,        "MQTT Task",            8096,   1},  

@@ -74,9 +74,9 @@ void appcfg_blank_to_v1(void *previous_config)
         cfg->version = 1;
         
         //home controller
-        cfg->hello_world_config_variable[0] = 0;
-        sprintf(cfg->hello_world_config_variable, "Hello World");
-               
+        cfg->led_pin = 0;
+        cfg->led_number = 0;
+        cfg->led_rgbw = 0;              
     }
     else
     {

@@ -6,7 +6,6 @@ add_library(project::application ALIAS application)
 target_sources(application INTERFACE
     
     ${CMAKE_CURRENT_LIST_DIR}/worker_tasks.c 
-    ${CMAKE_CURRENT_LIST_DIR}/hello_world_task.c 
     ${CMAKE_CURRENT_LIST_DIR}/application_cgi.c 
     ${CMAKE_CURRENT_LIST_DIR}/application_ssi.c 
     ${CMAKE_CURRENT_LIST_DIR}/application_config.c 
