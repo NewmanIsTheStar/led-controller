@@ -67,7 +67,21 @@ body {
       <label for="ledrgbw">RGBW</label>
       <input type="checkbox" id="lrgbw" name="lrgbw" value="on" style="height:20px; width:20px; vertical-align: middle;" <!--#lrgbw-->><br><br>         
       <label for="lednum">Number of LEDs</label>
-      <input type="text" id="lnum" name="lnum" value="<!--#lnum-->"><br><br>      
+      <input type="text" id="lnum" name="lnum" value="<!--#lnum-->"><br><br> 
+      <label for="ledp">Default Pattern</label><br>
+      <select name="ledp" id="ledp" style="font-size: 28px;">   
+        <option value="0">Blank</option>
+        <option value="1">Snakes</option>
+        <option value="2">Scan</option>
+        <option value="3">Random</option>
+        <option value="4">Sparkles</option>
+        <option value="5">Greys</option>        
+        <option value="6">Police</option>
+        <option value="7">Breath</option>
+      </select>
+      <label for="speed">Pattern transitition delay</label>
+      <input type="text" size="4" id="lspd" name="lspd" value="<!--#lspd-->">
+      <label>ms</label>                
       <br>                       
       <input type="submit" value="Save" style="font-size: 25px;">
     </form> 

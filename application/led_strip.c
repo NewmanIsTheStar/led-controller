@@ -113,6 +113,10 @@ void led_strip_task(void *params)
 
     for(;;)
     {
+        cfg->led_speed = 100;
+        cfg->led_pin = 28;
+        cfg->led_pattern = 2;
+
         if (cfg->led_pin && cfg->led_speed)
         {
             PIO pio = pio0;
@@ -168,7 +172,7 @@ void led_strip_task(void *params)
                     for (int i = 0; i < 1000; ++i) 
                     {
                         live_pattern = get_double_buf_integer(&local_pattern, 0);
-                        CLIP(live_pattern, 0, count_of(pattern_table));
+                        CLIP(live_pattern, 0, count_of(pattern_table)-1);
                         
                         pattern_table[live_pattern].pat(sm, NUM_PIXELS, t);
 

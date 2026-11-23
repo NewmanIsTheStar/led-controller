@@ -15,6 +15,7 @@
 #include "application_web.h"
 // #include "hc_task.h"
 #include "system_ssi.h"
+#include "led_strip.h"
 
 #ifdef USE_GIT_HASH_AS_VERSION
 #include "githash.h"
@@ -82,7 +83,19 @@ u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *
         {
             printed = snprintf(pcInsert, iInsertLen, "%s", app_web.led_last_request_ip);
         } 
-        break;         
+        break;   
+        
+        case SSI_lpat: //lpat
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%s", get_pattern_name(cfg->led_pattern)); 
+        }               
+        break; 
+
+        case SSI_lspd: //lspd
+        {
+            printed = snprintf(pcInsert, iInsertLen, "%d", cfg->led_speed);
+        }               
+        break;          
 
          // *** application  SSI end ***
         /************************************************************************************************/

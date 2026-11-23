@@ -16,7 +16,9 @@
     x(lnum)    \
     x(clpat)   \
     x(cltran)  \
-    x(clreq)
+    x(clreq)   \
+    x(lpat)    \
+    x(lspd)
       
     u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *connection_state);
 

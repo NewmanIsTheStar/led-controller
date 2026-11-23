@@ -18,6 +18,7 @@
 #include "application_web.h"
 #include "shell.h"
 #include "config.h"
+#include "led_strip.h"
 
 
 
@@ -45,6 +46,7 @@ const char * cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *
     int i = 0;
     char *param = NULL;
     char *value = NULL;
+    int new_pattern = -1;
 
     cfg->use_led_strip_to_indicate_irrigation_status = 0;   
     cfg->led_rgbw = 0;   
@@ -83,17 +85,23 @@ const char * cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *
                 sscanf(value, "%d", &cfg->led_number);             
             }  
 
-            if (strcasecmp("lie", param) == 0)
+            if (strcasecmp("lpat", param) == 0)
             {
-                if (value[0])
+                sscanf(value, "%d", &new_pattern);   
+                 
+                if ((new_pattern >=0) && (new_pattern < 8))  // TODO: make number of rows of pattern table visible to this file
                 {
-                    cfg->use_led_strip_to_indicate_irrigation_status = 1;
-                } 
-                else
-                {
-                    cfg->use_led_strip_to_indicate_irrigation_status = 0;
-                }                             
-            }                
+                    cfg->led_pattern = new_pattern;
+                    set_led_pattern_local(cfg->led_pattern);         
+                }
+            }
+
+            if (strcasecmp("lspd", param) == 0)
+            {
+                sscanf(value, "%d", &cfg->led_speed);
+
+                set_led_speed_local(cfg->led_speed);              
+            }             
         }
 
         i++;
