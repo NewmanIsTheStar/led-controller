@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-
+#include <stdatomic.h>
 #include "lwip/sockets.h"
 #include "lwip/apps/httpd.h"
 #include "calendar.h"

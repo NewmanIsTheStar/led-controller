@@ -5,7 +5,8 @@
  */
 
  #define _GNU_SOURCE
- 
+
+#include <stdatomic.h>
 #include "lwip/apps/fs.h"
 #include "lwip/sockets.h"
 #include "FreeRTOS.h"

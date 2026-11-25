@@ -11,6 +11,8 @@ target_sources(application INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/application_config.c 
     ${CMAKE_CURRENT_LIST_DIR}/application_web.c       
     ${CMAKE_CURRENT_LIST_DIR}/led_strip.c
+    ${CMAKE_CURRENT_LIST_DIR}/led_animation_task.c
+    ${CMAKE_CURRENT_LIST_DIR}/led_render_task.c    
     ${CMAKE_CURRENT_LIST_DIR}/message.c
     ${CMAKE_CURRENT_LIST_DIR}/mqtt_task.c
 )
@@ -24,6 +26,7 @@ target_include_directories(application INTERFACE
 target_link_libraries(system INTERFACE
     pluto_core 
     pico_stdlib 
+    pico_atomic
     hardware_pio
     hardware_flash
     hardware_dma

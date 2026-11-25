@@ -47,13 +47,13 @@
 #include "application_config.h"
 #include "application_web.h"
 
-#define IS_RGBW cfg->led_rgbw
+// #define IS_RGBW cfg->led_rgbw
 #define NUM_PIXELS cfg->led_number
 
 #ifdef PICO_DEFAULT_WS2812_PIN
 #define WS2812_PIN PICO_DEFAULT_WS2812_PIN
 #else
-#define WS2812_PIN cfg->led_pin
+//#define WS2812_PIN cfg->led_pin
 #endif
 
 // prototypes
