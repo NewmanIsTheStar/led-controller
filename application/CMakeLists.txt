@@ -10,7 +10,7 @@ target_sources(application INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/application_ssi.c 
     ${CMAKE_CURRENT_LIST_DIR}/application_config.c 
     ${CMAKE_CURRENT_LIST_DIR}/application_web.c       
-    ${CMAKE_CURRENT_LIST_DIR}/led_strip.c
+    # ${CMAKE_CURRENT_LIST_DIR}/led_strip.c
     ${CMAKE_CURRENT_LIST_DIR}/led_animation_task.c
     ${CMAKE_CURRENT_LIST_DIR}/led_render_task.c    
     ${CMAKE_CURRENT_LIST_DIR}/message.c

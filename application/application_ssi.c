@@ -32,6 +32,7 @@ extern SYS_WEB_VARIABLES_T sys_web;
 u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *connection_state)
 {
     size_t printed;
+    int animation_number = 0;
 
     switch(iIndex) 
     {
@@ -95,7 +96,30 @@ u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *
         {
             printed = snprintf(pcInsert, iInsertLen, "%d", cfg->led_speed);
         }               
-        break;          
+        break; 
+        
+        case SSI_anim0: //anim0
+        case SSI_anim1: 
+        case SSI_anim2: 
+        case SSI_anim3: 
+        case SSI_anim4: 
+        case SSI_anim5: 
+        case SSI_anim6: 
+        case SSI_anim7: 
+        {
+            animation_number = iIndex - SSI_anim0;
+            CLIP(animation_number, 0, 7);
+
+            if (animation_number == cfg->led_pattern)
+            {
+                printed = snprintf(pcInsert, iInsertLen, "<option value=\"%d\" selected>%s</option>", animation_number, get_pattern_name(animation_number));
+            }
+            else
+            {
+                printed = snprintf(pcInsert, iInsertLen, "<option value=\"%d\">%s</option>", animation_number, get_pattern_name(animation_number));
+            }
+        }
+        break;
 
          // *** application  SSI end ***
         /************************************************************************************************/

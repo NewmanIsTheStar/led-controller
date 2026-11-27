@@ -73,11 +73,8 @@ body {
         <option value="0">Blank</option>
         <option value="1">Snakes</option>
         <option value="2">Scan</option>
-        <option value="3">Random</option>
-        <option value="4">Sparkles</option>
-        <option value="5">Greys</option>        
-        <option value="6">Police</option>
-        <option value="7">Breath</option>
+        <option value="3">Police</option>
+        <option value="4">Breath</option>
       </select>
       <label for="speed">Pattern transitition delay</label>
       <input type="text" size="4" id="lspd" name="lspd" value="<!--#lspd-->">

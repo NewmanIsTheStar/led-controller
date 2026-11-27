@@ -18,7 +18,16 @@
     x(cltran)  \
     x(clreq)   \
     x(lpat)    \
-    x(lspd)
+    x(lspd)    \
+    x(anim0)   \
+    x(anim1)   \
+    x(anim2)   \
+    x(anim3)   \
+    x(anim4)   \
+    x(anim5)   \
+    x(anim6)   \
+    x(anim7)
+    
       
     u16_t application_ssi_handler(int iIndex, char *pcInsert, int iInsertLen, void *connection_state);
 

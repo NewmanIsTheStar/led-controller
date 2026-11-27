@@ -72,21 +72,17 @@ body {
           <tr>
             <td><label for="lpat">Default Pattern</label></td>
             <td><select name="lpat" id="lpat" style="font-size: 28px;">
-              <option value="-1">-</option>   
-              <option value="0">Blank</option>
-              <option value="1">Snakes</option>
-              <option value="2">Scan</option>
-              <option value="3">Random</option>
-              <option value="4">Sparkles</option>
-              <option value="5">Greys</option>        
-              <option value="6">Police</option>
-              <option value="7">Breath</option>
+              <!--#anim0-->
+              <!--#anim1-->
+              <!--#anim2-->
+              <!--#anim3-->
+              <!--#anim4-->                                                        
             </select></td>
           </tr>
           <tr>           
             <td><label for="speed">Default transitition delay</label></td>
             <td><input type="text" size="4" id="lspd" name="lspd" value="<!--#lspd-->">
-            <label>ms</label></td>  
+            <label>cycles</label></td>  
           </tr>           
           <tr>            
               <td>
